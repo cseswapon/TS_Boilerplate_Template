@@ -5,7 +5,6 @@ import router from "./router/router";
 const app: Application = express();
 
 app.use(express.json());
-app.use(router);
 
 app.get("/", (req: Request, res: Response) => {
   try {
@@ -27,5 +26,7 @@ app.get("/details", (req: Request, res: Response) => {
     });
   } catch (error) {}
 });
+
+app.use(router);
 
 export default app;
